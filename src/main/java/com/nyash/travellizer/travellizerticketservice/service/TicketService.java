@@ -1,9 +1,6 @@
 package com.nyash.travellizer.travellizerticketservice.service;
 
-import com.nyash.travellizer.model.entity.ticket.Order;
-import com.nyash.travellizer.model.entity.ticket.Ticket;
 
-import java.util.List;
 
 public interface TicketService {
 

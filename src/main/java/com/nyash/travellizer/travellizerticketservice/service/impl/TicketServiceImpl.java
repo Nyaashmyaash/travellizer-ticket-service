@@ -1,13 +1,6 @@
 package com.nyash.travellizer.travellizerticketservice.service.impl;
 
-import com.nyash.travellizer.common.generator.TicketNumberGenerator;
-import com.nyash.travellizer.common.generator.text.StringGenerator;
-import com.nyash.travellizer.common.infra.util.Checks;
-import com.nyash.travellizer.model.entity.ticket.Order;
-import com.nyash.travellizer.model.entity.ticket.Ticket;
-import com.nyash.travellizer.persistence.ticket.OrderRepository;
-import com.nyash.travellizer.persistence.ticket.TicketRepository;
-import com.nyash.travellizer.service.ticket.TicketService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
