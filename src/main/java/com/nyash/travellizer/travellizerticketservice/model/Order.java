@@ -2,6 +2,7 @@ package com.nyash.travellizer.travellizerticketservice.model;
 
 import com.nyash.travellizer.travellizercommon.infra.exception.flow.ReservationException;
 import com.nyash.travellizer.travellizercommon.model.entity.base.AbstractEntity;
+import com.nyash.travellizer.travellizertripservice.model.Trip;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
