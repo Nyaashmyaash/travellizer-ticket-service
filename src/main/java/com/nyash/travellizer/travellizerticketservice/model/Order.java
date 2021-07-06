@@ -1,4 +1,4 @@
-package com.nyash.travellizer.travellizerticketservice;
+package com.nyash.travellizer.travellizerticketservice.model;
 
 
 
