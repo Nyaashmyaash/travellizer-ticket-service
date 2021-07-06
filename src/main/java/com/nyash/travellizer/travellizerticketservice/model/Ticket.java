@@ -1,6 +1,9 @@
 package com.nyash.travellizer.travellizerticketservice.model;
 
 
+import com.nyash.travellizer.travellizercommon.generator.text.StringGenerator;
+import com.nyash.travellizer.travellizercommon.infra.util.Checks;
+import com.nyash.travellizer.travellizercommon.model.entity.base.AbstractEntity;
 import lombok.Setter;
 
 /**

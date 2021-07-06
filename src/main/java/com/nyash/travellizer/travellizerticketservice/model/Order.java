@@ -1,7 +1,7 @@
 package com.nyash.travellizer.travellizerticketservice.model;
 
-
-
+import com.nyash.travellizer.travellizercommon.infra.exception.flow.ReservationException;
+import com.nyash.travellizer.travellizercommon.model.entity.base.AbstractEntity;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -21,7 +21,7 @@ public class Order extends AbstractEntity {
     /**
      * Current order state
      */
-    private com.nyash.travellizer.model.entity.ticket.OrderState state;
+    private OrderState state;
 
     /**
      * Date/time when user should pay for the order(ticket)
@@ -36,7 +36,7 @@ public class Order extends AbstractEntity {
     /**
      * Link to the payed ticket(if order is completed)
      */
-    private com.nyash.travellizer.model.entity.ticket.Ticket ticket;
+    private Ticket ticket;
 
     /**
      * Client name/surname
@@ -54,14 +54,14 @@ public class Order extends AbstractEntity {
     private String cancellationReason;
 
     public Order() {
-        state = com.nyash.travellizer.model.entity.ticket.OrderState.CREATED;
+        state = OrderState.CREATED;
     }
 
     public int getId() {
         return id;
     }
 
-    public com.nyash.travellizer.model.entity.ticket.OrderState getState() {
+    public OrderState getState() {
         return state;
     }
 
@@ -73,7 +73,7 @@ public class Order extends AbstractEntity {
         return trip;
     }
 
-    public com.nyash.travellizer.model.entity.ticket.Ticket getTicket() {
+    public Ticket getTicket() {
         return ticket;
     }
 
@@ -96,7 +96,7 @@ public class Order extends AbstractEntity {
         if (dueDate.isBefore(LocalDateTime.now())) {
             System.out.println("This order misses due date and should be automatically cancelled, id: " + id);
         }
-        this.state = com.nyash.travellizer.model.entity.ticket.OrderState.CANCELLED;
+        this.state = OrderState.CANCELLED;
         this.cancellationReason = reason;
     }
 
@@ -107,14 +107,14 @@ public class Order extends AbstractEntity {
         if (dueDate.isBefore(LocalDateTime.now())) {
             throw new ReservationException("This order misses due date, id: " + id);
         }
-        this.state = com.nyash.travellizer.model.entity.ticket.OrderState.COMPLETED;
+        this.state = OrderState.COMPLETED;
     }
 
     public boolean isCompleted() {
-        return state == com.nyash.travellizer.model.entity.ticket.OrderState.COMPLETED;
+        return state == OrderState.COMPLETED;
     }
 
     public boolean isCancelled() {
-        return state == com.nyash.travellizer.model.entity.ticket.OrderState.CANCELLED;
+        return state == OrderState.CANCELLED;
     }
 }
